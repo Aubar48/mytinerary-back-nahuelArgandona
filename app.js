@@ -1,5 +1,6 @@
 import 'dotenv/config.js';
-
+import cors from 'cors'
+import './database/data.js'
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
@@ -12,6 +13,7 @@ import usersRouter from './routes/users.js';
 import { __dirname } from './utils.js';
 
 const app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
