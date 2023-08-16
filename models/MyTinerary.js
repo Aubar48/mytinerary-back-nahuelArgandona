@@ -4,7 +4,7 @@ const myTinerarySchema = Schema({
     name: { type: String, requeried: true },
     pais: { type: String, requeried: true },
     provincia: { type: String, requeried: true },
-    urls: ["The_Canada_of_Cordoba.jpg"],
+    urls: { type: String, requeried: true },
     descripción: { type: String }
 },
     { timestamps: true });
