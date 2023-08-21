@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.LINK_DB)
   .then(() => {
     console.log("connected to mongo");
   }).catch(() => {
