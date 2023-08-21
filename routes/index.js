@@ -1,12 +1,18 @@
+const Router = express.Router();
 import express from 'express';
-const indexRouter = express.Router();
-import { MyTinerary } from '../MyTinerary.js'
 
-/* GET home page. */
-indexRouter.get('/cities',) //getAll
-  .get('/cities/:id',) //getuOne
-  .post('/cities',) //createOne
-  .put('/cities/:id',) //changesOne
-  .delete('/cities/:id') //deleteOne
-export default indexRouter
+import userRouter from './users.js';
+import itinerayRouter from './itineraries.js';
+import activityRouter from './activities.js'
 
+Router.get('/', (req, res, next) => {
+  res.render('index', { title: 'index' })
+})
+
+Router.use('/users', userRouter)
+
+Router.use('/itineraries', itinerayRouter)
+
+Router.use('/activities', activityRouter)
+
+export default Router
