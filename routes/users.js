@@ -1,16 +1,16 @@
-import express from 'express'; 
-const router = express.Router();
-
-import create from '../controllers/users/create.js'
+import express from 'express';
+import create from '../controllers/users/create.js';
 import read from '../controllers/users/read.js'
-import readOne from '../controllers/users/readOne.js'
-import update from '../controllers/users/update.js'
-import destroy from '../controllers/users/destroy.js'
+import readOne from '../controllers/users/readOne.js';
+import update from '../controllers/users/update.js';
+import destroy from '../controllers/users/destroy.js';
 
-router.post('/', create); // Ruta para crear un usuario
-router.get('/', read); // Ruta para obtener todos los usuarios
-router.get('/:id', readOne); // Ruta para obtener un usuario por su ID
-router.put('/:id', update); // Ruta para actualizar un usuario por su ID
-router.delete('/:id', destroy); // Ruta para eliminar un usuario por su ID
+let router = express.Router();
 
-export default router;
+router.post('/', create)
+router.get('/', read)
+router.get('/:user_id', readOne)
+router.put('/:u_id', update)
+router.delete('/:id', destroy)
+
+export default router

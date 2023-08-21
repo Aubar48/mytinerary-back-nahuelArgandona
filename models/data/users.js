@@ -5,16 +5,28 @@ import User from '../User.js'
 async function insertUsers() {
   try {
     await connect(process.env.DATABASE_URL);
-    const users = [
-      {
-        name: "Nahuel",
-        lastName: "Argandoña",
-        mail: "nnahuell.gb@hotmail.com",
-        photo: "https://i.ibb.co/x634Wnh/05f13b18-8378-48ea-8b36-1809b87a2a53.png",
-        password: "012358aZ8@",
-        country: "Argentina"
-      },
-    ];
+    const users = [{
+      name: "Ignacio",
+      lastName: "Borraz",
+      mail: "igna@mh.com",
+      photo: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
+      password: "Hola1234",
+      country: "Argentina"
+    }, {
+      name: "Cinthia",
+      lastName: "Di Risio",
+      mail: "cin@mh.com",
+      photo: "https://static.wikia.nocookie.net/fma/images/2/26/MouthyMei.JPG/revision/latest?cb=20111223205242&path-prefix=es",
+      password: "Hola1234",
+      country: "Argentina"
+    }, {
+      name: "Franco",
+      lastName: "Sosa",
+      mail: "fran@mh.com",
+      photo: "https://i.pinimg.com/originals/42/04/77/4204771e1c54c2b9afa36f668261e7bd.gif",
+      password: "Hola1234",
+      country: "Argentina"
+    }]
 
     await User.insertMany(users);
     console.log('Hecho user up');

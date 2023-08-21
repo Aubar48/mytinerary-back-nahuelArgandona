@@ -1,13 +1,14 @@
-import { Schema, model } from "mongoose";
-const collection = 'users'
-const schema = new Schema({
+import { model, Schema } from "mongoose";
+let collection = 'users'
+
+let schema = new Schema({
     name: { type: String, required: true },
-    lastName: { type: String, required: true },
+    lastName: { type: String },
     mail: { type: String, required: true, unique: true },
-    photo: { type: String, default: "https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" },
+    photo: { type: String, default: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg" },
     password: { type: String, required: true },
-    country: { type: String, required: true },
+    country: { type: String, required: true }
 })
 
-const User = model(collection, schema)
+let User = model(collection, schema)
 export default User

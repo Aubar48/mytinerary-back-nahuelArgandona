@@ -1,13 +1,19 @@
-import { Schema, model, Types } from "mongoose";
-const collection = 'cities'
-const schema = new Schema({
+import { model, Schema, Types } from "mongoose";
+
+let collection = "cities"
+let schema = new Schema({
     country: { type: String, required: true },
-    province: { type: String, required: true },
-    name: { type: String, required: true },
-    photo: { type: String, default: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Map_of_country_subdivisions_%28provinces%29.svg/350px-Map_of_country_subdivisions_%28provinces%29.svg.png" },
-    description: { type: String, default: 'edit later' },
+    fundation: { type: Date, required: true },
+    population: { type: Number },
+    photo: { type: String, required: true },
+    city: { type: String, required: true },
+    description: { type: String, default: "edit later" },
+    smalldescription: { type: String, default: "edit later" },
+    featuredLocation: { type: String, default: "edit later" },
     admin_id: { type: Types.ObjectId, required: true, ref: 'users' }
+
 })
 
-const City = model(collection, schema)
+
+let City = model(collection, schema)
 export default City

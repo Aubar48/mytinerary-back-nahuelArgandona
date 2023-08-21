@@ -1,18 +1,16 @@
-const Router = express.Router();
 import express from 'express';
 
-import userRouter from './users.js';
-import itinerayRouter from './itineraries.js';
-import activityRouter from './activities.js'
+import usersRouter from './users.js'
+import citiesRouter from './cities.js'
 
-Router.get('/', (req, res, next) => {
-  res.render('index', { title: 'index' })
-})
+let router = express.Router();
 
-Router.use('/users', userRouter)
 
-Router.use('/itineraries', itinerayRouter)
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Index' });
+});
 
-Router.use('/activities', activityRouter)
+router.use('/users', usersRouter)
+router.use('/cities', citiesRouter)
 
-export default Router
+export default router
