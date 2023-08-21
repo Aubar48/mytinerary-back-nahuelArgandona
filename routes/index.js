@@ -1,14 +1,12 @@
 import express from 'express';
-const router = express.Router();
+const indexRouter = express.Router();
 import { MyTinerary } from '../MyTinerary.js'
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  console.log(req);
-  res.json({
-    data:MyTinerary,
-    success:true
-  })
-});
+indexRouter.get('/cities',) //getAll
+  .get('/cities/:id',) //getuOne
+  .post('/cities',) //createOne
+  .put('/cities/:id',) //changesOne
+  .delete('/cities/:id') //deleteOne
+export default indexRouter
 
-export default router;

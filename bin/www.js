@@ -6,8 +6,9 @@
 
 import app from '../app.js'
 import logger from 'debug'
-const debug = logger ('src:server');
+const debug = logger('src:server');
 import http from 'http';
+
 
 /**
  * Get port from environment and store in Express.
@@ -21,12 +22,13 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+let ready = () => console.log('http://localhost:' + port);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, ready);
 server.on('error', onError);
 server.on('listening', onListening);
 
