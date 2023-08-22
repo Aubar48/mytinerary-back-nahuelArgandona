@@ -24,7 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//cors
+app.use(cors())
 app.use('/api', indexRouter);
 app.use('/users', usersRouter);
 
@@ -43,6 +44,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-//cors
-app.use(cors())
+
 export default app;

@@ -14,7 +14,7 @@ router.post('/', create)
 //READ
 router.get('/', read)
 router.get('/carousel', carousel)
-router.get('/:user_id', readOne)     
+router.get('/:id', readOne)
 
 //UPDATE
 router.put('/:u_id', update)
