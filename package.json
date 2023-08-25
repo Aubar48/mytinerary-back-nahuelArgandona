@@ -7,7 +7,9 @@
     "start": "node ./bin/www.js",
     "dev": "nodemon ./bin/www.js",
     "users": "node ./models/data/users.js",
-    "cities": "node ./models/data/cities.js"
+    "cities": "node ./models/data/cities.js",
+    "activities": "node ./models/data/activities.js",
+    "itineraries": "node ./models/data/itineraries.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
