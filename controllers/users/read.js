@@ -9,10 +9,6 @@ export default async (req, res, next) => {
             response: allUsers
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'Not found',
-            response: null
-        })
+        next(error)
     }
 }

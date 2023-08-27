@@ -9,10 +9,6 @@ export default async (req, res, next) => {
             response: newUser._id
         })
     } catch (error) {
-        return res.status(400).json({
-            success: false,
-            message: 'Error user exist',
-            response: null
-        })
+        next(error)
     }
 }

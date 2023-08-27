@@ -8,7 +8,7 @@ import destroy from '../controllers/users/destroy.js';
 
 
 
-router.post('/', create)
+router.post('/register', create)
 router.get('/', read)
 router.get('/:user_id', readOne)
 router.put('/:u_id', update)

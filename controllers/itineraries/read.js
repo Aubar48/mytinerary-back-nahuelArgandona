@@ -16,8 +16,8 @@ export default async (req, res, next) => {
         }
 
         let allItineraries = await Itinerary
-            .find(objetoDeBusqueda, 'name photo city_id')
-            .populate('city_id', 'photo city country -_id')
+            .find(objetoDeBusqueda, 'name price duration tags photo city_id')
+            .populate('city_id', 'country fundation population photo city description smalldescription featuredLocation -_id')
             .sort(objetoDeOrdenamiento);
 
         if (allItineraries.length > 0) {

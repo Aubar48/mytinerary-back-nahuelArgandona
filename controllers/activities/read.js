@@ -18,7 +18,7 @@ export default async (req, res, next) => {
 
         let allActivities = await Activity
             .find(objetoDeBusqueda, 'name photo itinerary_id')
-            .populate('itinerary_id', 'name photo city_id -_id')
+            .populate('itinerary_id', 'name price duration tags photo -_id')
             .sort(objetoDeOrdenamiento);
 
         if (allActivities.length > 0) {
