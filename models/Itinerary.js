@@ -4,7 +4,7 @@ let collection = "itineraries"
 let schema = new Schema({
     name: { type: String, required: true },
     city_id: { type: Types.ObjectId, required: true, ref: 'cities' },
-    price: { type: Number },
+    price: { type: Number, min: 1, max:5 },
     duration: { type: Number },
     tags: { type: [String], required: true },
     photo: { type: String, required: true }
