@@ -16,7 +16,7 @@ export default async (req, res, next) => {
         }
 
         let allItineraries = await Itinerary
-            .find(objetoDeBusqueda, 'name price duration tags photo city_id')
+            .find(objetoDeBusqueda, 'name price duration tags like profilePicture profileName comment photo city_id')
             .populate('city_id', 'country fundation population photo city description smalldescription featuredLocation -_id')
             .sort(objetoDeOrdenamiento);
 

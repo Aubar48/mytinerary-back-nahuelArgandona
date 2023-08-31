@@ -3,8 +3,8 @@ import Itinerary from "../../models/Itinerary.js";
 
 export default async (req, res, next) => {
     try {
-        let itinerary = await Itinerary.findOne({ nameI: req.params.name })
-        console.log(req.params.itinerary);
+        let itinerary = await Itinerary.findOne({ name: req.params.itinerary })
+        
         let objetoDeBusqueda = { itinerary_id: itinerary._id };
         let objetoDeOrdenamiento = {};
 
@@ -20,7 +20,7 @@ export default async (req, res, next) => {
 
         let allActivities = await Activity
             .find(objetoDeBusqueda, 'name photo itinerary_id')
-            .populate('itinerary_id', 'name price duration tags photo -_id')
+            .populate('itinerary_id', 'name price duration tags like profilePicture profileName comment photo -_id')
             .sort(objetoDeOrdenamiento);
 
         if (allActivities.length > 0) {
