@@ -18,31 +18,8 @@ import signinSchema from "../schemas/signin.js";
 let authRouter = Router();
 
 
-authRouter.post(
-    "/register",
-    validator(registerSchema),
-    existsUser,
-    isValidPass,
-    register
-);
-authRouter.post(
-    "/signin",
-    validator(signinSchema),
-    notExistsUser,
-    isPassOk,
-    isValidToken,
-    signin
-);
-authRouter.post(
-    "/token",
-    passport.authenticate("jwt", { session: false }),
-    isValidToken,
-    token
-);
-authRouter.post(
-    "/signout",
-    passport.authenticate("jwt", { session: false }),
-    signout
-);
-
+authRouter.post("/register",validator(registerSchema),existsUser,isValidPass,register);
+authRouter.post("/signin",validator(signinSchema),notExistsUser,isPassOk,isValidToken,signin);
+authRouter.post("/token",passport.authenticate("jwt", { session: false }),isValidToken,token);
+authRouter.post("/signout",passport.authenticate("jwt", { session: false }),signout);
 export default authRouter;
