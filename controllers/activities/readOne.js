@@ -3,7 +3,7 @@ import Activity from "../../models/Activity.js";
 export default async (req, res, next) => {
     console.log(req.params);
     try {
-        let one = await Activity.findOne({ _id: req.params.id }); // Assuming the ID is in req.params.id
+        let one = await Activity.findOne({ _id: req.params.id });
         if (one) {
             return res.status(200).json({
                 success: true,
