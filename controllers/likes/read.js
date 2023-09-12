@@ -1,11 +1,16 @@
-import Like from '../../models/Likes.js';
+import Like from "../../models/Like.js";
+
 export default async (req, res, next) => {
     try {
-        let like = await Like(req.body)
-        return res.status(201).json({
+        let queries = {}
+        if (req.query.itinerary_id) {
+            queries.itinerary_id = req.query.itinerary_id
+        }
+        let count = await Like.countDocuments(queries)
+        return res.status(200).json({
             success: true,
-            message: 'Like created',
-            response: like._id
+            message: 'likes from itinerary',
+            response: count
         })
     } catch (error) {
         next(error)
