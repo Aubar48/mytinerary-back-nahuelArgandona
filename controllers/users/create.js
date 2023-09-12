@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs'
 export default async (req, res, next) => {
     try {
         const existeMail = await User.findOne({ mail: req.body.mail })
+
         if (!existeMail) {
             const passwordHash = bcrypt.hashSync(req.body.password, 10)
             let body = { ...req.body }
