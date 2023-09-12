@@ -10,7 +10,7 @@ export default async (req, res, next) => {
 
         return res.status(201).json({
             success: true,
-            message: 'User Registered',
+            message: 'user has been registered',
             response: {
                 user: one._id,
                 token: token

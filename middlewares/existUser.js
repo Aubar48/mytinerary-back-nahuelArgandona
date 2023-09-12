@@ -6,7 +6,7 @@ export default async (req, res, next) => {
         if (one) {
             return res.status(400).json({
                 success: false,
-                message: "user has been registered",
+                message: "the user with that email is already registered",
                 response: one._id,
             });
         } else {
