@@ -8,10 +8,6 @@ import authRouter from './auth.js';
 import likesRouter from './likes.js';
 let router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Index' });
-});
 //obligo al enrutador principal a usar las rutas del enrutador del recurso user
 router.use('/users', usersRouter)
 router.use('/cities', citiesRouter)
