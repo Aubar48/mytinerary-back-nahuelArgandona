@@ -2,7 +2,7 @@
 
 # Tp myTinerary -> Backend, MindHub AP MERN 07 TN Nahuel Argandoña<img align="center" alt="JS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> 
 
-### web render[]
+### Api in render[https://mytinerarybackend.onrender.com] + /api > /users or > /cities or > / itineraries  or > /activities
 
 <figure><img src="./mock/proyectoBackend.png" alt="logo" style="height: 400px;"></figure>          
 
